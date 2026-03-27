@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GTG Perfumes - Luxury fragrances that elevate your lifestyle. Discover our exclusive collection of premium perfumes.">
+    <meta name="theme-color" content="#1a5f3b">
+    <title>GTG Perfumes - Live Your Best Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a class="logo" href="#home" aria-label="GTG Home">
+                    <h1>GTG</h1>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home">Home</a></li>
+                        <li class="has-caret">
+                            <a href="#products" aria-haspopup="true">Shop <span class="caret" aria-hidden="true">&#9662;</span></a>
+                        </li>
+                        <li><a href="#products">Fragrances</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="icon-button" type="button" aria-label="Search" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <a class="cta-button" href="#products">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay" hidden>
+        <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+            <div class="search-row">
+                <input id="searchInput" class="search-input" type="search" placeholder="Search products..." aria-label="Search products">
+                <button class="search-close" id="searchClose" type="button" aria-label="Close search">&#10005;</button>
+            </div>
+            <div class="search-hint">Type and press Enter.</div>
+        </div>
+    </div>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true">
+            <img src="assets/images/grass_bottle.png" alt="Perfume bottle on grass" class="hero-img" width="1408" height="768" decoding="async">
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text-block">
+                <div class="h-badge">
+                    <span class="h-badge-icon">🌿</span>
+                    <span>Awarded the best perfume in the world</span>
+                </div>
+
+                <h2 class="h-headline">Live your best life.</h2>
+
+                <div class="h-stats">
+                    <div class="h-stat">
+                        <span class="h-stat-num">10x</span>
+                        <span class="h-stat-lbl">power</span>
+                    </div>
+                    <div class="h-stat">
+                        <span class="h-stat-num">9</span>
+                        <span class="h-stat-lbl">ingredients</span>
+                    </div>
+                    <div class="h-stat">
+                        <span class="h-stat-num">20K+</span>
+                        <span class="h-stat-lbl">happy customers</span>
+                    </div>
+                </div>
+
+                <a class="hero-cta" href="#products">Shop Now</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <!-- Product Gallery & Details Section -->
+    <section class="product-section" id="products">
+        <div class="container product-container">
+            <!-- Left: Product Gallery -->
+            <div class="gallery-wrapper">
+                <div class="main-image-container">
+                    <img id="mainImage" src="assets/images/figma/group-main.png" alt="Product image" class="main-image" width="610" height="673" decoding="async">
+                    <button class="gallery-nav prev" id="prevBtn" aria-label="Previous image">
+                        <img src="assets/images/figma/Button.svg" alt="" width="39" height="39" aria-hidden="true">
+                    </button>
+                    <button class="gallery-nav next" id="nextBtn" aria-label="Next image">
+                        <img src="assets/images/figma/Button-1.svg" alt="" width="39" height="39" aria-hidden="true">
+                    </button>
+                    <div class="gallery-dots" id="dotsContainer" aria-label="Gallery dots"></div>
+                </div>
+
+                <!-- Thumbnail Gallery -->
+                <div class="thumbnail-container">
+                    <div class="thumbnails" id="thumbnails">
+                        <img src="assets/images/figma/group-main.png" alt="View 1" class="thumbnail active" data-index="0" loading="lazy" width="80" height="80" decoding="async">
+                        <img src="assets/images/figma/gallery-02.jpg" alt="View 2" class="thumbnail" data-index="1" loading="lazy" width="80" height="80">
+                        <img src="assets/images/figma/gallery-03.jpg" alt="View 3" class="thumbnail" data-index="2" loading="lazy" width="80" height="80">
+                        <img src="assets/images/figma/gallery-04.jpg" alt="View 4" class="thumbnail" data-index="3" loading="lazy" width="80" height="80">
+                        <img src="assets/images/figma/gallery-05.jpg" alt="View 5" class="thumbnail" data-index="4" loading="lazy" width="80" height="80">
+                        <img src="assets/images/figma/gallery-06.jpg" alt="View 6" class="thumbnail" data-index="5" loading="lazy" width="80" height="80">
+                        <img src="assets/images/figma/gallery-07.jpg" alt="View 7" class="thumbnail" data-index="6" loading="lazy" width="80" height="80">
+                        <img src="assets/images/figma/gallery-08.jpg" alt="View 8" class="thumbnail" data-index="7" loading="lazy" width="80" height="80">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right: Product Details -->
+            <div class="product-details">
+                <div class="product-head">
+                    <h3>GTG Perfumes</h3>
+                    <div class="rating">
+                        <span class="stars" aria-label="Rated 4.7 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="rating-text">4.7</span>
+                        <span class="reviews">(999+ reviews)</span>
+                    </div>
+                </div>
+                <p class="description">Experience the timeless allure backed by modern artistry, captured in every bottle of our fragrance. Crafted for those who seek to elevate their essence with purpose and sophistication.</p>
+
+                <div class="plans" role="radiogroup" aria-label="Subscription options">
+                    <div class="plan-card active" data-plan="single">
+                        <label class="plan-header">
+                            <input type="radio" name="plan" value="single" checked>
+                            <span class="plan-name">Single Subscription</span>
+                            <span class="plan-price">
+                                <span class="plan-price-now">$99.99</span>
+                                <span class="plan-price-was">$114.99</span>
+                            </span>
+                        </label>
+                        <div class="plan-body" id="planBodySingle">
+                            <div class="plan-topbar">Most Popular</div>
+                            <div class="plan-controls" id="planControlsSingle">
+                                <div class="selection-group">
+                                    <div class="group-label">Choose a Fragrance</div>
+                                    <div class="fragrance-grid">
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance" value="original" checked>
+                                            <span class="fragrance-name">Original</span>
+                                            <span class="fragrance-badge">BEST-SELLER</span>
+                                            <img src="assets/images/figma/group-main.png" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance" value="lily">
+                                            <span class="fragrance-name">Lily</span>
+                                            <img src="assets/images/figma/fragrance-lily.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance" value="rose">
+                                            <span class="fragrance-name">Rose</span>
+                                            <img src="assets/images/figma/fragrance-rose.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="shared-host" data-shared-host="single">
+                                    <div class="shared-controls" id="sharedControls">
+                                        <div class="selection-group">
+                                            <div class="group-label">What's Included:</div>
+                                            <div class="included-cards">
+                                                <label class="purchase-tile purchase-tile--small">
+                                                    <input type="radio" name="purchase" value="every-30" checked>
+                                                    <div class="purchase-head">
+                                                        <span class="purchase-title">Every 30 Days</span>
+                                                        <span class="purchase-meta">Cancel anytime</span>
+                                                    </div>
+                                                    <div class="purchase-media purchase-media--single" aria-hidden="true">
+                                                        <img src="assets/images/figma/group-main.png" alt="" loading="lazy" width="96" height="120" decoding="async">
+                                                    </div>
+                                                </label>
+
+                                                <label class="purchase-tile purchase-tile--wide">
+                                                    <input type="radio" name="purchase" value="one-time">
+                                                    <div class="purchase-head">
+                                                        <span class="purchase-title">One Time <span class="purchase-free">(Free)</span></span>
+                                                        <span class="purchase-meta">Free shipping</span>
+                                                    </div>
+                                                    <div class="purchase-media purchase-media--trio" aria-hidden="true">
+                                                        <img src="assets/images/figma/group-main.png" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                                        <img src="assets/images/figma/fragrance-lily.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                                        <img src="assets/images/figma/fragrance-rose.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <ul class="included-list" aria-label="Included with your order">
+                                            <li id="includedBottleCount">1 Bottle Shipped Monthly</li>
+                                            <li><strong>Free</strong> Sampler For Original, Lily And Rose Fragrances</li>
+                                            <li><strong>50% OFF Shipping</strong></li>
+                                            <li>Pause or cancel after 3 months minimum</li>
+                                            <li>28 day money back guarantee</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-card" data-plan="double">
+                        <label class="plan-header">
+                            <input type="radio" name="plan" value="double">
+                            <span class="plan-name">Double Subscription</span>
+                            <span class="plan-price">
+                                <span class="plan-price-now">$169.99</span>
+                                <span class="plan-price-was">$184.99</span>
+                            </span>
+                        </label>
+                        <div class="plan-body" id="planBodyDouble" hidden>
+                            <div class="plan-controls" id="planControlsDouble">
+                                <div class="selection-group">
+                                    <div class="group-label">Choose Fragrance 1</div>
+                                    <div class="fragrance-grid">
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance1" value="original" checked>
+                                            <span class="fragrance-name">Original</span>
+                                            <span class="fragrance-badge">BEST-SELLER</span>
+                                            <img src="assets/images/figma/group-main.png" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance1" value="lily">
+                                            <span class="fragrance-name">Lily</span>
+                                            <img src="assets/images/figma/fragrance-lily.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance1" value="rose">
+                                            <span class="fragrance-name">Rose</span>
+                                            <img src="assets/images/figma/fragrance-rose.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="selection-group">
+                                    <div class="group-label">Choose Fragrance 2</div>
+                                    <div class="fragrance-grid">
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance2" value="original" checked>
+                                            <span class="fragrance-name">Original</span>
+                                            <span class="fragrance-badge">BEST-SELLER</span>
+                                            <img src="assets/images/figma/group-main.png" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance2" value="lily">
+                                            <span class="fragrance-name">Lily</span>
+                                            <img src="assets/images/figma/fragrance-lily.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                        <label class="fragrance-tile">
+                                            <input type="radio" name="fragrance2" value="rose">
+                                            <span class="fragrance-name">Rose</span>
+                                            <img src="assets/images/figma/fragrance-rose.jpg" alt="" loading="lazy" width="64" height="84" decoding="async">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="shared-host" data-shared-host="double"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="add-to-cart-btn" id="addToCartLink" href="#" rel="nofollow">Add to Cart</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Our Collection Section -->
+    <section class="collection-section" id="about">
+        <div class="container collection-container">
+            <div class="collection-grid">
+                <div class="collection-left">
+                    <h2 class="collection-title">Our Collection</h2>
+
+                    <div class="accordion" id="collectionAccordion">
+                        <div class="accordion-item">
+                            <button class="accordion-trigger" type="button" aria-expanded="true">
+                                <span class="accordion-title">Signature Scents</span>
+                                <span class="accordion-icon" aria-hidden="true">&#8722;</span>
+                            </button>
+                            <div class="accordion-panel">
+                                <p>Discover our curated line of signature perfumes, designed to become your daily companion.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger" type="button" aria-expanded="false">
+                                <span class="accordion-title">Signature Scents</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="accordion-panel" hidden>
+                                <p>Discover our curated line of signature perfumes, designed to become your daily companion.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger" type="button" aria-expanded="false">
+                                <span class="accordion-title">Signature Scents</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="accordion-panel" hidden>
+                                <p>Discover our curated line of signature perfumes, designed to become your daily companion.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger" type="button" aria-expanded="false">
+                                <span class="accordion-title">Signature Scents</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="accordion-panel" hidden>
+                                <p>Discover our curated line of signature perfumes, designed to become your daily companion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-right">
+                    <img src="assets/images/figma/collection.jpg" alt="Collection lifestyle" class="collection-image" loading="lazy" width="900" height="900">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number"><span class="stat-value" data-target="84">0</span><span class="stat-suffix">%</span></div>
+                <p class="stat-desc">Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number"><span class="stat-value" data-target="78">0</span><span class="stat-suffix">%</span></div>
+                <p class="stat-desc">Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number"><span class="stat-value" data-target="89">0</span><span class="stat-suffix">%</span></div>
+                <p class="stat-desc">Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number"><span class="stat-value" data-target="90">0</span><span class="stat-suffix">%</span></div>
+                <p class="stat-desc">Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-section" id="blog">
+        <div class="container">
+            <h2>Why GTG is the #1 Choice</h2>
+            <div class="table-wrapper">
+                <table class="comparison-table" aria-label="GTG comparison table">
+                    <thead>
+                        <tr>
+                            <th class="qualities-col">Qualities</th>
+                            <th class="brand-col brand-gtg">
+                                <div class="brand-head">
+                                    <img src="assets/images/figma/group-lifestyle.png" alt="" loading="lazy" width="96" height="96">
+                                    <div class="brand-name">GTG</div>
+                                </div>
+                            </th>
+                            <th class="brand-col">
+                                <div class="brand-head">
+                                    <img src="assets/images/figma/gallery-06.jpg" alt="" loading="lazy" width="72" height="72">
+                                    <div class="brand-name small">Arose</div>
+                                </div>
+                            </th>
+                            <th class="brand-col">
+                                <div class="brand-head">
+                                    <img src="assets/images/figma/gallery-07.jpg" alt="" loading="lazy" width="72" height="72">
+                                    <div class="brand-name small">Bella</div>
+                                </div>
+                            </th>
+                            <th class="brand-col">
+                                <div class="brand-head">
+                                    <img src="assets/images/figma/gallery-08.jpg" alt="" loading="lazy" width="72" height="72">
+                                    <div class="brand-name small">Daisies</div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-label">Potency Concentration</td>
+                            <td class="brand-gtg">10x</td>
+                            <td>1x</td>
+                            <td>1x</td>
+                            <td>10x</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Longevity</td>
+                            <td class="brand-gtg"><img class="cell-icon" src="assets/images/figma/icon-check-green.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-check-outline.svg" alt="Yes" width="28" height="28"></td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Sillage</td>
+                            <td class="brand-gtg"><img class="cell-icon" src="assets/images/figma/icon-check-green.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Bottle Design Score</td>
+                            <td class="brand-gtg">9</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Blend and Harmony</td>
+                            <td class="brand-gtg"><img class="cell-icon" src="assets/images/figma/icon-check-green.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Skin Compatibility</td>
+                            <td class="brand-gtg"><img class="cell-icon" src="assets/images/figma/icon-check-green.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Scent Profile</td>
+                            <td class="brand-gtg"><img class="cell-icon" src="assets/images/figma/icon-check-green.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-check-outline.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">Price vs. Quality</td>
+                            <td class="brand-gtg"><img class="cell-icon" src="assets/images/figma/icon-check-green.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-check-outline.svg" alt="Yes" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-x.svg" alt="No" width="28" height="28"></td>
+                            <td><img class="cell-icon" src="assets/images/figma/icon-check-outline.svg" alt="Yes" width="28" height="28"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a class="comparison-cta" href="#products">Try It Risk-Free</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">GTG</div>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#products">Shop</a>
+                        <a href="#products">Fragrances</a>
+                    </div>
+                </div>
+
+                <div class="footer-links footer-links-secondary">
+                    <a href="#about">About Us</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v8h3v-8h3l1-3h-4v-3c0-.6.4-1 1-1z"></path>
+                            </svg>
+                        </span>
+                        <span class="social-label">Facebook</span>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="1"></circle>
+                            </svg>
+                        </span>
+                        <span class="social-label">Instagram</span>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18.9 3H21l-6.9 7.9L22 21h-6.2l-4.9-6.4L5.3 21H3l7.5-8.6L2 3h6.3l4.4 5.7L18.9 3zm-2.2 16h1.7L7.2 4.9H5.4L16.7 19z"></path>
+                            </svg>
+                        </span>
+                        <span class="social-label">x</span>
+                    </a>
+                </div>
+
+                <div class="footer-newsletter">
+                    <div class="footer-newsletter-title">Join our newsletter to stay up to date on features and releases.</div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="footer-newsletter-note">By subscribing you agree to with our <a href="#" aria-label="Privacy Policy">Privacy Policy</a> and provide consent to receive updates from our company.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
