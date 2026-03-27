@@ -54,6 +54,9 @@
   --transition-fast: 150ms ease-in-out;
   --transition-base: 300ms ease-in-out;
   --transition-slow: 500ms ease-in-out;
+
+  /* Layout */
+  --header-height: 84px;
 }
 
 /* ===========================
@@ -76,6 +79,7 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 :focus-visible {
@@ -145,7 +149,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1456px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
 }
@@ -175,18 +179,23 @@ body {
    HEADER & TRANSPARENT NAV
    =========================== */
 .header {
-    position: sticky;
+    position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 150;
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(50, 45, 45, 0.08);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
 }
 
 .header.is-scrolled {
     background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(50, 45, 45, 0.08);
 }
 
 .main-header {
@@ -213,6 +222,14 @@ body {
     letter-spacing: 1px;
 }
 
+.logo h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+  line-height: 1;
+}
+
 .nav {
     display: flex;
     gap: 25px;
@@ -234,6 +251,31 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.icon-button {
+  color: #000000;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.icon-button svg {
+  stroke: #000000;
+  fill: none;
+}
+
+.icon-button svg * {
+  stroke: #000000;
 }
 
 .search-btn {
@@ -271,6 +313,29 @@ body {
     margin: 0;
     padding: 0;
     flex-wrap: nowrap;
+}
+
+.hamburger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: rgba(3, 46, 21, 0.7);
+  border-radius: 999px;
+  display: block;
 }
 
 .nav-menu a {
@@ -384,8 +449,8 @@ body {
     position: relative;
     width: 100%;
     /* Set height to 100% of the screen height */
-    height: 100vh; 
-    min-height: 900px;
+    height: 100vh;
+    height: 100svh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -402,7 +467,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the grass and bottle fill the space */
-    object-position: center bottom; /* Keeps the bottle area visible */
+    object-position: 80% bottom; /* Keeps the bottle fully visible on wide screens */
 }
 
 /* Container and Content */
@@ -412,6 +477,20 @@ body {
     width: 100%;
 }
 
+.hero .container.hero-content {
+  max-width: none;
+  padding-left: clamp(1.5rem, 6vw, 5.5rem);
+  padding-right: clamp(1.5rem, 6vw, 5.5rem);
+}
+
+.hero-content {
+  display: flex;
+  align-items: flex-start;
+  padding-top: calc(var(--header-height) + 0.85rem);
+  padding-bottom: 3.25rem;
+}
+
+.hero-text-block,
 .hero-text {
     max-width: 650px;
 }
@@ -437,14 +516,14 @@ body {
     color: #0a3d24;
     font-size: 4.5rem; /* Larger to match the 'Live your best life' look */
     font-weight: 800;
-    line-height: 2.0;
-    margin-bottom: 30px;
+    line-height: 1.08;
+    margin-bottom: 22px;
 }
 
 .h-stats {
     display: flex;
     gap: 70px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .h-stat-num {
@@ -483,7 +562,7 @@ body {
    =========================== */
 
 .product-section {
-  padding: 1.5rem 0 4rem;
+  padding: 3.75rem 0 4rem;
   background: var(--white);
 }
 
@@ -491,6 +570,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   gap: 3.5rem;
+  align-items: start;
   margin-bottom: var(--spacing-2xl);
 }
 
@@ -507,15 +587,18 @@ body {
   aspect-ratio: 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--white);
+  background: linear-gradient(180deg, rgba(242, 242, 242, 0.95), rgba(255, 255, 255, 1));
 }
 
 .main-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center 70%;
+  object-fit: cover;
+  object-position: center;
   transition: opacity var(--transition-base);
+  display: block;
 }
 
 @supports not (aspect-ratio: 1) {
@@ -533,7 +616,7 @@ body {
 
 .gallery-nav {
   position: absolute;
-  bottom: 10px;
+  bottom: 24px;
   background: transparent;
   border: none;
   width: 39px;
@@ -553,11 +636,11 @@ body {
 }
 
 .gallery-nav.prev {
-  left: 14px;
+  left: 24px;
 }
 
 .gallery-nav.next {
-  right: 14px;
+  right: 24px;
 }
 
 .gallery-nav img {
@@ -605,7 +688,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 18px;
+  bottom: 26px;
   display: flex;
   gap: 0.35rem;
   align-items: center;
@@ -653,6 +736,7 @@ body {
   color: #032e15;
   font-weight: 800;
   letter-spacing: -0.7px;
+  margin: 0;
 }
 
 .description {
@@ -717,7 +801,27 @@ body {
 .plan-header input {
   width: 18px;
   height: 18px;
-  accent-color: var(--primary);
+  margin: 0;
+  justify-self: center;
+  align-self: center;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 999px;
+  border: 1.5px solid rgba(50, 45, 45, 0.28);
+  background: var(--white);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.plan-header input:checked {
+  border-color: rgba(26, 95, 59, 0.55);
+  background: radial-gradient(circle at center, var(--primary) 0 4px, transparent 5px);
+}
+
+.plan-header input:focus-visible {
+  outline: 2px solid rgba(26, 95, 59, 0.55);
+  outline-offset: 3px;
 }
 
 .plan-name {
@@ -808,12 +912,13 @@ body {
 .fragrance-tile.is-selected::after {
   content: "";
   position: absolute;
-  top: calc(1.05rem + 3px);
-  left: calc(1.05rem + 3px);
+  top: calc(1.05rem + 6px);
+  left: calc(1.05rem + 6px);
   width: 6px;
   height: 6px;
   border-radius: 999px;
   background: var(--primary);
+  transform: translate(-50%, -50%);
 }
 
 .fragrance-tile img {
@@ -912,18 +1017,20 @@ body {
 .purchase-tile.is-selected::after {
   content: "";
   position: absolute;
-  top: calc(1.05rem + 3px);
-  left: calc(1.05rem + 3px);
+  top: calc(1.05rem + 6px);
+  left: calc(1.05rem + 6px);
   width: 6px;
   height: 6px;
   border-radius: 999px;
   background: var(--primary);
+  transform: translate(-50%, -50%);
 }
 
 .purchase-head {
   display: grid;
   gap: 0.1rem;
   padding-left: 1.35rem;
+  padding-top: 0.25rem;
 }
 
 .purchase-title {
@@ -991,7 +1098,7 @@ body {
   display: grid;
   gap: 0.5rem;
   padding: 0;
-  margin-top: 0.35rem;
+  margin-top: 0.95rem;
 }
 
 .included-list li {
@@ -1004,12 +1111,20 @@ body {
 }
 
 .included-list li::before {
-  content: '✓';
+  content: "✓";
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(26, 95, 59, 0.28);
+  background: rgba(26, 95, 59, 0.08);
   color: var(--primary);
   font-weight: 800;
-  line-height: 1.2;
-  margin-top: 0.1rem;
-  flex: 0 0 auto;
+  font-size: 0.8rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  margin-top: 0.15rem;
+  flex: 0 0 18px;
 }
 
 .included-list strong {
@@ -1659,7 +1774,7 @@ details p {
 
 @media (min-width: 769px) {
   .gallery-wrapper {
-    margin-top: 10.5rem;
+    margin-top: 0;
   }
 }
 
@@ -1899,14 +2014,15 @@ details p {
   .gallery-nav {
     width: 36px;
     height: 36px;
+    bottom: 20px;
   }
 
   .gallery-nav.prev {
-    left: var(--spacing-sm);
+    left: 18px;
   }
 
   .gallery-nav.next {
-    right: var(--spacing-sm);
+    right: 18px;
   }
 
   .thumbnail {
@@ -1984,10 +2100,6 @@ details p {
   to {
     opacity: 1;
   }
-}
-
-.product-details {
-  animation: slideInUp 0.6s ease-out;
 }
 
 .comparison-section {
